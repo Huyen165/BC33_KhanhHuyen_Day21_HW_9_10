@@ -140,7 +140,9 @@
                             <th>Họ và tên</th>
                             <th>Email</th>
                             <th>Ngày làm</th>
+                            <th>Lương cơ bản</th>
                             <th>Chức vụ</th>
+                            <th>Số giờ làm</th>
                             <th>Tổng lương</th>
                             <th>Xếp loại</th>
                             <th><em class="fa fa-cog"></em></th>
@@ -216,8 +218,7 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fa fa-key"></i
-                    ></span>
+                                    <span class="input-group-text"><i class="fa fa-key"></i></span>
                                 </div>
                                 <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Mật khẩu" />
                             </div>
@@ -253,7 +254,6 @@
                     ></span>
                                 </div>
                                 <select class="form-control" id="chucvu">
-                    <option>Chọn chức vụ</option>
                     <option>Giám Đốc</option>
                     <option>Trưởng phòng</option>
                     <option>Nhân viên</option>
@@ -280,7 +280,7 @@
                     <button id="btnThemNV" type="button" onclick="createEmployee()" class="btn btn-success">
               Thêm người dùng
             </button>
-                    <button id="btnCapNhat" type="button" class="btn btn-success">
+                    <button id="btnCapNhat" type="button" class="btn btn-success" onclick="updateEmployee()">
               Cập nhật
             </button>
                     <button id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal">
@@ -299,7 +299,7 @@
 
     <!-- Date Picker -->
     <!-- <script src="js/jquery-ui.min.js"></script> -->
-    <script src="./js/jquery-ui.js"></script>
+    <script src="js/jquery-ui.js"></script>
     <script src="js/datepicker.js"></script>
 
     <!-- Wow -->
@@ -317,6 +317,7 @@
             });
         });
     </script>
+    <script src="./Methods/Validation.js"></script>
     <script src="./models/Employee.js"></script>
     <script src="./js/index.js"></script>
 </body>

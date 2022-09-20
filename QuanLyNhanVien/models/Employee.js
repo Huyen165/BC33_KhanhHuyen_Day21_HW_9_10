@@ -10,9 +10,9 @@ function Employee(account, name, email, password, workDay, salary, position, wor
     this.totalSalary = totalSalary;
     this.employeeType = employeeType;
     this.totalSalary = function() {
-        if (position === "Giám đốc") {
+        if (position === "Giám Đốc") {
             totalSalary = Number(salary) * 3;
-        } else if (position === "Trưởng Phòng") {
+        } else if (position === "Trưởng phòng") {
             totalSalary = Number(salary) * 2;
         } else {
             totalSalary = Number(salary);

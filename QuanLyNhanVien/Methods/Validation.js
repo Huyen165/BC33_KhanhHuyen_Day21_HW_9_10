@@ -1,9 +1,9 @@
 function checkEmpty(value, selectorError, name) {
-    if (value === " ") {
-        document.querySelector(selectorError).innerHTML = name + ' không được bỏ trống';
+    if (value.trim() === "") {
+        document.querySelector(selectorError).innerHTML = name + " không được bỏ trống ";
         return false;
     }
-    document.querySelector(selectorError).innerHTML = " ";
+    document.querySelector(selectorError).innerHTML = "";
     return true;
 };
 
@@ -12,12 +12,12 @@ function checkLength(value, selectorError, name, minLength, maxLength) {
         document.querySelector(selectorError).innerHTML = name + " từ " + minLength + " đến " + maxLength + " ký tự !";
         return false;
     }
-    document.querySelector(selectorError).innerHTML = " ";
+    document.querySelector(selectorError).innerHTML = '';
     return true;
 };
 
 function checkLetter(value, selectorError, name) {
-    var regex = /^[A-Z a-z]+$/;
+    var regex = /[^a-z0-9A-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]/;
     if (regex.test(value)) {
         document.querySelector(selectorError).innerHTML = " ";
         return true;
@@ -25,7 +25,7 @@ function checkLetter(value, selectorError, name) {
     document.querySelector(selectorError).innerHTML = name + " tất cả phải là ký tự !";
     return false;
 
-}
+};
 
 function checkEmail(value, selectorError, name) {
     var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\ [[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -36,7 +36,7 @@ function checkEmail(value, selectorError, name) {
     document.querySelector(selectorError).innerHTML = name + " phải đúng định dạng! VD: abc@domain.com";
     return false;
 
-}
+};
 
 function checkPassWord(value, selectorError, name) {
     //lower case:
@@ -66,13 +66,13 @@ function checkPassWord(value, selectorError, name) {
     document.querySelector(selectorError).innerHTML = " ";
     return true;
 
-}
+};
 
 function checkValue(value, selectorError, name, minValue, maxValue) {
     if (Number(value) < minValue || Number(value) > maxValue || value.trim() === " ") {
-        document.querySelector(selectorError).innerHTML = name + ' từ ' + minLength + " đến " + maxLength + " !";
+        document.querySelector(selectorError).innerHTML = name + ' từ ' + minValue + " đến " + maxValue + " !";
         return false;
     }
     document.querySelector(selectorError).innerHTML = '';
     return true;
-}
+};
